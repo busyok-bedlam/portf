@@ -1,0 +1,45 @@
+
+@import compass/reset
+.glitch
+  font-size: 170px
+  font-weight: 700
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  text-decoration: none
+  &:hover
+    &::before
+      animation: glitch .3s cubic-bezier(.25, .46, .45, .94) both infinite
+    &::after
+      animation: glitch .3s cubic-bezier(.25, .46, .45, .94) reverse both infinite
+  &::before, &::after
+    position: absolute
+    display: block
+    content: "17"
+    top: 0
+    left: 0
+    
+  &::before
+    color: cyan
+    z-index: -1
+  &::after
+    color: #000
+    z-index: -2
+
+
+@keyframes glitch
+  0%
+    transform: translate(0)
+  20%
+    transform: translate(-5px, 5px)
+  40%
+    transform: translate(-5px, -5px)
+  60%
+    transform: translate(5px, 5px)
+  80%
+    transform: translate(5px, -5px)
+  100%
+    transform: translate(0)
+   
+      
